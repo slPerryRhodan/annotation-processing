@@ -14,6 +14,13 @@ java {
 	}
 }
 
+// WORKAROUND: Makes IntelliJ recognizing the generated mapstruct code under WSL2, which is automatically available under Windows
+// Groovy DSL: sourceSets.main.java.srcDirs = ['build/generated/sources/annotationProcessor/java/main', 'src/main/java']
+// Kotlin DSL:
+java.sourceSets["main"].java {
+	srcDir("build/generated/sources/annotationProcessor/java/main")
+}
+
 repositories {
 	mavenCentral()
 }
