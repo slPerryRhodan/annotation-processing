@@ -17,21 +17,21 @@ java {
 // WORKAROUND: Makes IntelliJ recognizing the generated mapstruct code under WSL2, which is automatically available under Windows
 // Groovy DSL: sourceSets.main.java.srcDirs = ['build/generated/sources/annotationProcessor/java/main', 'src/main/java']
 // Kotlin DSL:
-java.sourceSets["main"].java {
-	srcDir("build/generated/sources/annotationProcessor/java/main")
-}
+//java.sourceSets["main"].java {
+//	srcDir("build/generated/sources/annotationProcessor/java/main")
+//}
 
 repositories {
 	mavenCentral()
 }
 
-val mockitoVersion = "1.6.3"
+val mapstructVersion = "1.6.3"
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter")
 	implementation("org.springframework.boot:spring-boot-starter-web")
-	implementation("org.mapstruct:mapstruct:$mockitoVersion")
-	annotationProcessor("org.mapstruct:mapstruct-processor:$mockitoVersion")
+	implementation("org.mapstruct:mapstruct:$mapstructVersion")
+	annotationProcessor("org.mapstruct:mapstruct-processor:$mapstructVersion")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
